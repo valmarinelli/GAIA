@@ -1,4 +1,4 @@
-# UdR_GAIA
+# UdR GAIA
 Scripts and libraries created for the GAIA project.
 
 ## Contents
