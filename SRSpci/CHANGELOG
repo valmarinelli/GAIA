@@ -1,0 +1,50 @@
+This is the Solar SpectroRadiometer (SRS) python command interface - SRSpci
+
+Version: 0.2
+Date: 2018-03-19
+- Initial avaspecSRS module version, with some more function imported from the
+  C++ library with respect to the initial AvaSpec Linux example: AVS_Deactivate,
+  AVS_Done
+
+Version: 0.5
+Date: 2018-03-29
+- Added and corrected some more function: AVS_GetAnalogIn,
+  AVS_GetLambda, AVS_SetDigOut. All of them should be OK, only the last is yet
+  to be tested (need to connect the shutter)
+- Created the OperateSRS module
+- Set the global variable NPIXEL in avaspecSRS, as we are going to use only one
+  model of spectrometer/detector
+
+Version: 0.7.5
+Date: 2018-04-06
+- Added WriteHeader, modified WriteData output format
+- Modified the CFG module to accommodate the single-instrument approach
+
+Version: 0.8
+Date: 2018-04-09
+- Small cleanings on comments
+- When there's no device attached, Initialization now gives empty output
+- Modified WriteHeader and WriteData output format
+
+Version: 0.9
+Date: 2018-04-16
+- Added, removed or modified comments on several functions
+- Modified sunrad_spa and sunPosition input variables (Site,Height)
+- Corrected ERRORS in sunPosition and sunrad_spa, leading to wrong SZAs.
+  **However, sunrad_spa still gives Azimuth values that can be 180 deg. away**
+- Modified WriteHeader and WriteData in more pythonic fashion
+- Removed GetData, moved into new, more complex function: GetMeasure
+
+Version: 0.9.5
+Date: 2018-05-10
+- ozone_OD: implemented Wavelgt interpolation, corrected and simplified code
+- created no2_OD for NO2 optical depth calculation
+- created wv_MTau for water vapour effective optical depth calculation (m*Tau)
+- Created the __init__ module containing SRSpci modules list, created CHANGELOG
+- Exported Skyrad- and Sunrad-related functions to the SkyradTools module
+
+Version: 0.9.6
+Date: 2018-05-11
+- avaspec_SRS: changed the libavs path, from user-owned to system path. In
+  case it is needed, it has to be modified the LIBAVS_PATH variable accordingly.
+
